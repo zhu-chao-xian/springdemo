@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    jedis:
+      pool:
+        max-active: 100
+        min-idle: 10
+        max-wait: -1m
+    password: 12345
+    port: 6379
+
+
+
+mybatis:
+  mapper-locations: classpath:mappering/*Mapper.xml
+ # type-aliases-package: com.example.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+
